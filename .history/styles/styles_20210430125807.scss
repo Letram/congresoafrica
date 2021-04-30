@@ -1,0 +1,448 @@
+$brown: rgb(210, 178, 120);
+$orange: rgb(213, 108, 51);
+$blue: #003348;
+$blue-light: #5a8192;
+$green: rgb(119, 146, 95);
+$purple: rgb(119, 38, 94);
+$pink: rgb(211, 49, 73);
+$light: #b5d9bd;
+$black: rgb(43, 43, 43);
+
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500");
+* {
+  all: default;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #d2b278;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+header {
+  background: url("../resources/pictures/pexels-oleg-magni-861339.jpg")
+    rgba(43, 43, 43, 0.3);
+  background-blend-mode: color;
+  background-position: 0% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      position: relative;
+      background-color: $brown;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 6rem;
+      height: 6rem;
+      margin: 2rem;
+      img {
+        width: 10rem;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+    .title {
+      position: relative;
+      color: $brown;
+      text-shadow: 1px 1px 2px $black;
+    }
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba($color: $black, $alpha: 0.6);
+    }
+  }
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 1rem;
+    a {
+      position: relative;
+      text-decoration: none;
+      color: $brown;
+      font-size: 2rem;
+      overflow: hidden;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          $brown 12%,
+          rgba($color: $brown, $alpha: 0.3) 12%
+        );
+        transform: translateY(90%);
+        transition: all ease-in 0.15s;
+      }
+      &:hover {
+        &::before {
+          transform: translateY(0);
+        }
+      }
+      p {
+        margin: 0;
+        padding: 0.25rem 4rem;
+        text-decoration: none;
+        color: white;
+        font-size: 1.75rem;
+        font-weight: bold;
+        position: relative;
+        transition: all ease-in 0.15s;
+        text-shadow: 1px 1px 2px $black;
+      }
+    }
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  h1.title {
+    width: 100%;
+    margin: auto;
+    padding: 2rem 0;
+    text-align: center;
+    background-color: $orange;
+    color: white;
+    font-family: "Crimson Text", serif;
+    font-size: 3rem;
+    line-height: normal;
+    letter-spacing: 0.3rem;
+    &.t1 {
+      background-color: $pink;
+    }
+    &.t2 {
+      background-color: $blue;
+    }
+    &.t3 {
+      background-color: $brown;
+    }
+  }
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.sec-1 {
+    background-image: url("../resources/pictures/pexels-bestbe-models-2170387.jpg");
+    background-size: cover;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba($color: $pink, $alpha: 0.3);
+      background-size: cover;
+    }
+    .card {
+      background-color: rgba($color: $pink, $alpha: 0.45);
+      box-shadow: 0 8px 32px 0 rgba($color: $purple, $alpha: 0.4);
+      margin: 3rem 0;
+      .content {
+        color: white;
+      }
+    }
+  }
+  &.sec-2 {
+    background-image: url("../resources/pictures/1568293830_982907_1568294091_noticia_normal_recorte1.jpg");
+    background-size: cover;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba($color: $blue, $alpha: 0.3);
+      background-size: cover;
+    }
+    .card {
+      background-color: rgba($color: $blue-light, $alpha: 0.45);
+      box-shadow: 0 8px 32px 0 rgba($color: $blue, $alpha: 0.4);
+      .content {
+        color: white;
+        .fecha {
+          display: flex;
+          align-items: center;
+          width: fit-content;
+          height: 2rem;
+          color: white;
+          background-color: rgba($color: #003348, $alpha: 0.15);
+          padding: 0 0.5rem 0 0;
+          &::before {
+            content: "";
+            height: inherit;
+            border-right: 3px solid #003348;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+  &.sec-3 {
+    background-image: url("../resources/pictures/pexels-cottonbro-6334763.jpg");
+    background-size: cover;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba($color: $orange, $alpha: 0.3);
+      background-size: cover;
+    }
+    .card {
+      background-color: rgba($color: $brown, $alpha: 0.45);
+      box-shadow: 0 8px 32px 0 rgba($color: $orange, $alpha: 0.4);
+      .content {
+        color: white;
+        .foundation {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr;
+          gap: 1rem;
+          .founders {
+            display: grid;
+            gap: 1rem;
+            grid-template-areas:
+              "founder1 founder2"
+              "text         text";
+
+            .founder1 {
+              grid-area: founder1;
+            }
+            .founder2 {
+              grid-area: founder2;
+            }
+            .text {
+              grid-area: text;
+              font-size: 1rem;
+              text-align: center;
+              position: relative;
+              &::before{
+                content: "";
+                position: absolute;
+                top: -5%;
+                width: 100%;
+                border-top: 3px solid #d2b278;
+              }
+            }
+            .founder1,
+            .founder2 {
+              p {
+                text-align: center;
+                font-size: 1rem;
+              }
+              img {
+                display: block;
+                object-fit: contain;
+                width: 70%;
+                height: auto;
+                margin: 0 auto;
+              }
+            }
+          }
+          .founder {
+            p {
+              text-align: center;
+              font-size: 1rem;
+            }
+            img {
+              display: block;
+              object-fit: contain;
+              width: 70%;
+              height: auto;
+              margin: 0 auto;
+              border-radius: 50%;
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .card {
+    width: 60%;
+    padding: 3rem 5rem;
+    margin: 0 auto;
+    background-color: rgba($color: white, $alpha: 0.4);
+    background-clip: padding-box;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: relative;
+    .title {
+      font-size: 3rem;
+      position: relative;
+      &:after {
+        content: "";
+        width: 100%;
+        height: 0.35rem;
+        background: $black;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .content {
+      p {
+        font-size: 1.75rem;
+        color: white;
+        text-align: justify;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+      }
+      span{
+        color:white;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.index {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  display: flex;
+  //clip-path: circle(100% at 0 50%);
+  //transition: clip-path ease-in 0.5s;
+  .title {
+    margin: 0;
+    padding: 1rem;
+    color: white;
+    background: $black;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    cursor: pointer;
+  }
+  .indexes {
+    border-left: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    clip-path: circle(150% at 0 50%);
+    background: $black;
+    transition: all 0.5s ease-in-out;
+    padding-left: 0.25rem;
+    a {
+      text-decoration: none;
+      p {
+        color: white;
+        padding-right: 0.5rem;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        &:after {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background: white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transform: translateX(-100%);
+          transition: all 0.25s ease-in;
+        }
+        &:hover {
+          &:after {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.clipped {
+  clip-path: circle(0% at 0 50%) !important;
+}
+
+@media (max-width: 1396px) {
+  header {
+    .head {
+      flex-direction: column;
+      .title {
+        padding: 0 0.25rem !important;
+        text-align: center;
+      }
+    }
+    background-position: 0%;
+    .navigation {
+      width: 80%;
+      flex-direction: column;
+      a {
+        width: 100%;
+        p {
+          text-align: center;
+          padding: 0.25rem 0.25rem;
+        }
+      }
+    }
+  }
+  article {
+    .title {
+      font-size: 1.5rem;
+      padding: 1rem 0 !important;
+    }
+  }
+  .section {
+    .card {
+      margin: 1rem auto !important;
+      padding: 0.5rem 1.5rem !important;
+      width: 75% !important;
+      .content {
+        p {
+          font-size: 1rem !important;
+          color: white;
+        }
+      }
+    }
+  }
+  .index {
+    .title {
+      padding: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+    .indexes {
+    }
+  }
+}

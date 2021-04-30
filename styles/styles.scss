@@ -151,9 +151,11 @@ article {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  display: grid;
+  place-items: center;
   &.sec-1 {
     background-image: url("../resources/pictures/pexels-bestbe-models-2170387.jpg");
     background-size: cover;
@@ -170,8 +172,24 @@ article {
     .card {
       background-color: rgba($color: $pink, $alpha: 0.45);
       box-shadow: 0 8px 32px 0 rgba($color: $purple, $alpha: 0.4);
+      margin: 3rem 0;
       .content {
         color: white;
+        .fecha {
+          display: flex;
+          align-items: center;
+          width: fit-content;
+          height: 2rem;
+          color: white;
+          background-color: rgba($color: $purple, $alpha: 0.25);
+          padding: 0 0.5rem 0 0;
+          &::before {
+            content: "";
+            height: inherit;
+            border-right: 3px solid $purple;
+            margin-right: 1rem;
+          }
+        }
       }
     }
   }
@@ -323,6 +341,11 @@ article {
         text-align: justify;
         font-family: "Montserrat", sans-serif;
         font-weight: 400;
+      }
+      span{
+        color:white;
+        font-weight: bold;
+        text-decoration: underline;
       }
     }
   }
